@@ -59,6 +59,7 @@ function buildCharts(sample) {
   d3.json("samples.json").then((data) => {
     // 3. Create a variable that holds the samples array. 
     var sampleData = data.samples;
+    var metaData = data.metadata;
     // 4. Create a variable that filters the samples for the object with the desired sample number.
     var filteredData = sampleData.filter(x => x.id == sample);
     //  5. Create a variable that holds the first sample in the array.
@@ -118,11 +119,11 @@ function buildCharts(sample) {
   
     //Build Gauge chart
     // 1. Create a variable that filters the metadata array for the object with the desired sample number.
-    var wfreq = metadata.wfreq;
+    var wfreq = metaData.wfreq;
 
     var gaugeTrace = {
       domain: { x: [0, 1], y: [0, 1] },
-				value: wfreqDefault,
+				value: wfreq,
 				title: {text: '<b>Belly Button Washing Frequency</b> <br> Scrubs per week'},
 				type: "indicator",
 				mode: "gauge+number",
