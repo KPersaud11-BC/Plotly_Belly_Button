@@ -5,4 +5,8 @@ The Challenge relates to bacterial species studies occuring in a microbiology la
 
 In the challenge, I create a drop-down menu that provides interactivity. When a Test Subject ID Number is selected, the requested information is provided in a table, horizontal bar chart, bubble chart, and gauge.
 
-For modifications, I included 1. A background picture for the jumbotron, 2. a background color for the page and font, and 3. A paragraph explaining the project.
+For modifications, I included 
+
+1. A background picture for the jumbotron, 
+2. A background color for the page and font, and 
+3. A paragraph explaining the project.
