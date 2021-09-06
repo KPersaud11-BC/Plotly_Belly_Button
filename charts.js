@@ -119,8 +119,14 @@ function buildCharts(sample) {
   
     //Build Gauge chart
     // 1. Create a variable that filters the metadata array for the object with the desired sample number.
-    var wfreq = metaData.wfreq;
+    var filteredMetadata = metaData.filter(x => x.id == sample);
+    // 2. Create a variable that holds the first sample in the metadata array.
+    var firstMeta = filteredMetadata[0];
 
+    // 3. Create a variable that holds the washing frequency.
+    var wfreq = firstMeta.wfreq;
+
+    // 4. Create the trace for the gauge chart.
     var gaugeTrace = {
       domain: { x: [0, 1], y: [0, 1] },
 				value: wfreq,
@@ -140,7 +146,11 @@ function buildCharts(sample) {
     };
 
     var gaugeData = [gaugeTrace];
+
+    // 5. Create the layout for the gauge chart.
+    var gaugeLayout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
     
+    // 6. Use Plotly to plot the gauge data and layout.
     Plotly.newPlot('gauge', gaugeData);
 
   
